@@ -1,0 +1,17 @@
+<form class="form-signup" ng-controller="guzo.signupCtrl">
+    <fieldset>
+        <legend class="form-signin-heading">Please Sign up</legend>
+        <div class="control-group" ng-repeat="field in input.fields">  
+            <label class="control-label" for="{{field.id}}">{{field.label}}</label>  
+            <div class="controls">  
+              <input ng-if="field.autofocus" type="{{field.type}}" class="form-control" id="{{field.id}}" autofocus>
+              <input ng-if="!field.autofocus" type="{{field.type}}" class="form-control {{field.autofocus}}" id="{{field.id}}">
+            </div>  
+        </div>
+        <label class="checkbox">
+        <input type="checkbox" value="remember-me" required>
+          I agree to the <a href="#terms">terms</a> and <a href="#conditions">conditions</a>
+        </label>
+        <button class="btn btn-info btn-block" type="submit">Sign up</button>
+    </fieldset>
+</form>
