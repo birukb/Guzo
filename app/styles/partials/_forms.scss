@@ -1,0 +1,12 @@
+@mixin form($max-width, $min-width){
+    max-width: $max-width;
+    min-width: $min-width;
+    margin: auto;
+    padding: 30px;
+}
+
+@mixin form-border($color, $radius, $box-shadow){
+    border: 1px solid $color;
+    border-radius: $radius;
+    box-shadow: $box-shadow;
+}
