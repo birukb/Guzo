@@ -2,7 +2,7 @@
     <fieldset>
         <legend class="form-signup-heading">Please Sign up</legend>
         <div class="control-group" ng-repeat="field in input.fields">  
-            <label class="control-label" for="{{field.id}}">{{field.label}}</label>  
+            <label class="control-label" for="{{field.id}}">{{field.label}}</label>
             <div class="controls">  
               <input ng-if="field.autofocus" type="{{field.type}}" class="form-control" id="{{field.id}}" autofocus>
               <input ng-if="!field.autofocus" type="{{field.type}}" class="form-control {{field.autofocus}}" id="{{field.id}}">
