@@ -1,7 +1,7 @@
 <form class="form-signup" ng-controller="guzo.signupCtrl">
     <fieldset>
         <legend class="form-signup-heading">Please Sign up</legend>
-        <div class="control-group" ng-repeat="field in input.fields">  
+        <div class="control-group" ng-repeat="field in input.fields">
             <label class="control-label" for="{{field.id}}">{{field.label}}</label>
             <div class="controls">  
               <input ng-if="field.autofocus" type="{{field.type}}" class="form-control" id="{{field.id}}" autofocus>
