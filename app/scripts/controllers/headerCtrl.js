@@ -2,7 +2,7 @@
 define([], function(){
     'use strict';
 
-    var controllerName = 'guzo.headerCtrl',
+    var controllerName = 'headerCtrl',
         controller,
         siteMap;
 

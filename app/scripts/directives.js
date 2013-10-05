@@ -1,12 +1,10 @@
 /*global define*/
-define(['angular'], function(angular) {
+define(['angular', 'directives/directives'], function(angular, directives) {
     'use strict'  ;
 
-    return angular.module('guzo.directives', [])
-        .directive('guzoheader', function () {
-            return {
-                restrict: 'E',
-                templateUrl:'partials/header.html'
-            };
-        });
+    var dir = angular.module('guzo.directives', []);
+
+    directives.forEach(function(directive){
+        dir.directive(directive.name, directive.directive);
+    });
 });

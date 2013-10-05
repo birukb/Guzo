@@ -2,20 +2,10 @@
 define([], function(){
     'use strict';
 
-    var controllerName = 'guzo.signupCtrl',
+    var controllerName = 'signupCtrl',
         controller;
 
     controller = function($scope){
-        $scope.user = {
-            name: {
-                first: '',
-                middle: '',
-                last: ''
-            },
-            phone: '',
-            email: '',
-            password: ''
-        };
 
         $scope.input = {
             fields: [

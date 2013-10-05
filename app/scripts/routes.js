@@ -5,7 +5,10 @@ define([], function() {
     return function($routeProvider){
         $routeProvider.when('/', {templateUrl: 'partials/intro.html'});
         $routeProvider.when('/login', {templateUrl: 'partials/login.html'});
-        $routeProvider.when('/signup', {templateUrl: 'partials/signup.html'});
+        $routeProvider.when('/signup', {
+            templateUrl: 'partials/signup.html',
+            controller: 'signupCtrl'
+        });
         $routeProvider.otherwise({template: 'under construction'});
     };
 });
