@@ -26,7 +26,6 @@ define([], function(){
     };
 
     return {
-        name: 'HeaderMenu',
-        service: service
+        HeaderMenu: service
     };
 });

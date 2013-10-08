@@ -4,7 +4,7 @@ define(['angular', 'services/services'], function(angular, services){
     var serviceModule = angular.module('guzo.services', []);
 
     services.forEach(function(service){
-        serviceModule.factory(service.name, service.service);
+        serviceModule.factory(service);
     });
 
     return serviceModule;

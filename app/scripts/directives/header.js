@@ -2,10 +2,7 @@
 
 define([], function (){
     'use strict';
-    var directiveName = 'guzoheader',
-        directive;
-
-    directive = function ($rootScope, $location) {
+    var directive = function ($rootScope, $location) {
         return {
             restrict: 'E',
             templateUrl:'partials/header.html',
@@ -61,7 +58,6 @@ define([], function (){
     };
 
     return{
-        name: directiveName,
-        directive: ['$rootScope', '$location', directive]
+        guzoheader: ['$rootScope', '$location', directive]
     };
 });

@@ -2,9 +2,11 @@
 define(['angular', 'directives/directives'], function(angular, directives) {
     'use strict'  ;
 
-    var dir = angular.module('guzo.directives', []);
+    var directiveModule = angular.module('guzo.directives', []);
 
     directives.forEach(function(directive){
-        dir.directive(directive.name, directive.directive);
+        directiveModule.directive(directive);
     });
+
+    return directiveModule;
 });

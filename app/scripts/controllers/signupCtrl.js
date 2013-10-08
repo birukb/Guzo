@@ -2,11 +2,7 @@
 define([], function(){
     'use strict';
 
-    var controllerName = 'signupCtrl',
-        controller;
-
-    controller = function($scope){
-
+    var controller = function($scope){
         $scope.input = {
             fields: [
                 {id: 'fName', key: 'name.first', type: 'text', label: 'First Name', autofocus: 'autofocus'},
@@ -21,7 +17,6 @@ define([], function(){
     };
 
     return{
-        name: controllerName,
-        controller: ['$scope', controller]
+        signupCtrl: ['$scope', controller]
     };
 });
