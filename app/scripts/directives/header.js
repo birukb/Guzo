@@ -2,13 +2,17 @@
 
 define([], function (){
     'use strict';
-    var directive = function ($rootScope, $location) {
+    var directive = function ($rootScope, $location, HeaderMenu) {
         return {
             restrict: 'E',
             templateUrl:'partials/header.html',
             replace: true,
             link: function(scope, element){
                 var displayed;
+
+                scope.nav = {
+                    maps: HeaderMenu.anonHeaderMenu
+                };
 
                 $rootScope.$on('$routeChangeStart', function (){
                     highlightCurrentLocation();
@@ -58,6 +62,6 @@ define([], function (){
     };
 
     return{
-        guzoheader: ['$rootScope', '$location', directive]
+        guzoheader: ['$rootScope', '$location', 'HeaderMenu', directive]
     };
 });

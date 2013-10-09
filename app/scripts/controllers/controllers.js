@@ -1,12 +1,7 @@
 /*global define*/
 
-define(['controllers/headerCtrl',
-    'controllers/signupCtrl'], function(headerCtrl,
-        signupCtrl){
+define(['controllers/signupCtrl'], function(signupCtrl){
     'use strict';
 
-    return [
-        headerCtrl,
-        signupCtrl
-    ];
+    return [signupCtrl];
 });
