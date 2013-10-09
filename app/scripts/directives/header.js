@@ -14,6 +14,10 @@ define([], function (){
                     maps: HeaderMenu.anonHeaderMenu
                 };
 
+                scope.app = {
+                    title: 'Guzo'
+                };
+
                 $rootScope.$on('$routeChangeStart', function (){
                     highlightCurrentLocation();
                 });

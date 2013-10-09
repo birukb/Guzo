@@ -1,7 +1,7 @@
 /*global define*/
 
-define(['directives/header'],function(header){
+define(['directives/header', 'directives/login'],function(header, login){
     'use strict';
     
-    return [header];
+    return [header, login];
 });
