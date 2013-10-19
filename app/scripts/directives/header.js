@@ -27,7 +27,9 @@ define([], function (){
         };
     };
 
+    directive.$inject = ['$rootScope', '$location', 'HeaderMenu'];
+
     return{
-        guzoheader: ['$rootScope', '$location', 'HeaderMenu', directive]
+        guzoheader: directive
     };
 });

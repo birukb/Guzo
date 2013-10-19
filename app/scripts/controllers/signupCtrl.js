@@ -16,7 +16,9 @@ define([], function(){
         };
     };
 
+    controller.$inject = ['$scope'];
+
     return{
-        signupCtrl: ['$scope', controller]
+        signupCtrl: controller
     };
 });
