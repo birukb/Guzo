@@ -34,6 +34,6 @@ define([], function (){
     directive.$inject = ['$rootScope', '$location', 'HeaderMenu'];
 
     return{
-        guzoheader: directive
+        guzoHeader: directive
     };
 });
