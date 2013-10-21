@@ -18,7 +18,5 @@ define([], function(){
 
     controller.$inject = ['$scope'];
 
-    return{
-        signupCtrl: controller
-    };
+    return controller;
 });

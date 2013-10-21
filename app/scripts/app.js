@@ -1,8 +1,9 @@
 /*global define */
 define(['angular',
     'routes',
-    'controllers',
-    'directives',
+    'signin/signin',
+    'signup/signup',
+    'header/header',
     'services',
     'angularRoute'
 ], function (angular, routes) {
@@ -10,9 +11,9 @@ define(['angular',
 
     var app = angular.module('guzo', [
         'ngRoute',
-        'guzo.controllers',
-        'guzo.directives',
-        'guzo.services'
+        'header',
+        'signin',
+        'signup'
     ]);
 
     app.config(['$routeProvider', routes]);

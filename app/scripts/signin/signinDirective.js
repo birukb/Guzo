@@ -15,5 +15,5 @@ define([], function (){
         };
     };
 
-    return {guzoLogin: directive};
+    return {guzoSignin: directive};
 });

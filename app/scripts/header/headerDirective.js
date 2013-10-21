@@ -5,7 +5,7 @@ define([], function (){
     var directive = function ($rootScope, $location, HeaderMenu) {
         return {
             restrict: 'E',
-            templateUrl:'partials/header.html',
+            templateUrl:'scripts/header/header.html',
             replace: true,
             link: function(scope, element){
                 scope.nav = {
