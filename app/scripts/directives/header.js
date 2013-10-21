@@ -21,7 +21,11 @@ define([], function (){
                 };
 
                 $rootScope.$on('$routeChangeStart', function (){
-                    element.find('.nav-collapse').collapse('hide');
+                    var el = element.find('.nav-collapse');
+                    if(el.height() > 0){
+                        // need to check for height b/c if already collapsed it will expand when you call collapse
+                        el.collapse('hide');
+                    }
                 });
             }
         };
