@@ -4,7 +4,6 @@ define(['angular',
     'signin/signin',
     'signup/signup',
     'header/header',
-    'services',
     'angularRoute'
 ], function (angular, routes) {
     'use strict';

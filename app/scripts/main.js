@@ -5,12 +5,12 @@
             jquery: '../bower_components/jquery/jquery',
             angular: '../bower_components/angular/angular',
             angularRoute: '../bower_components/angular-route/angular-route',
-            bootstrap: 'vendor/bootstrap'
+            bootstrap: '../bower_components/bootstrap/dist/js/bootstrap'
         },
         shim: {
             bootstrap: {
                 deps: ['jquery'],
-                exports: 'jquery'
+                exports: 'bootstrap'
             },
             angular: {
                 exports: 'angular'
