@@ -1,4 +1,3 @@
-// Generated on 2013-08-19 using generator-webapp 0.2.7
 'use strict';
 var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
@@ -11,20 +10,20 @@ module.exports = function (grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     // configurable paths
-    var yeomanConfig = {
+    var guzoConfig = {
         app: 'app',
         dist: 'dist'
     };
 
     grunt.initConfig({
-        yeoman: yeomanConfig,
+        guzo: guzoConfig,
         watch: {
             compass: {
-                files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
+                files: ['<%= guzo.app %>/styles/**/*.{scss,sass}'],
                 tasks: ['compass:server', 'autoprefixer']
             },
             styles: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
+                files: ['<%= guzo.app %>/styles/{,*/}*.css'],
                 tasks: ['copy:styles', 'autoprefixer']
             },
             livereload: {
@@ -32,12 +31,12 @@ module.exports = function (grunt) {
                     livereload: LIVERELOAD_PORT
                 },
                 files: [
-                    '<%= yeoman.app %>/*.html',
-                    '<%= yeoman.app %>/partials/*.html',
+                    '<%= guzo.app %>/*.html',
+                    '<%= guzo.app %>/partials/*.html',
                     '.tmp/styles/{,*/}*.css',
-                    '{.tmp,<%= yeoman.app %>}/scripts/**/*.js',
-                    '!<%= yeoman.app %>/scripts/vendor/*.js',
-                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+                    '{.tmp,<%= guzo.app %>}/scripts/**/*.js',
+                    '!<%= guzo.app %>/scripts/vendor/*.js',
+                    '<%= guzo.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
                 ]
             }
         },
@@ -53,7 +52,7 @@ module.exports = function (grunt) {
                         return [
                             lrSnippet,
                             mountFolder(connect, '.tmp'),
-                            mountFolder(connect, yeomanConfig.app)
+                            mountFolder(connect, guzoConfig.app)
                         ];
                     }
                 }
@@ -72,7 +71,7 @@ module.exports = function (grunt) {
                 options: {
                     middleware: function (connect) {
                         return [
-                            mountFolder(connect, yeomanConfig.dist)
+                            mountFolder(connect, guzoConfig.dist)
                         ];
                     }
                 }
@@ -89,8 +88,8 @@ module.exports = function (grunt) {
                     dot: true,
                     src: [
                         '.tmp',
-                        '<%= yeoman.dist %>/*',
-                        '!<%= yeoman.dist %>/.git*'
+                        '<%= guzo.dist %>/*',
+                        '!<%= guzo.dist %>/.git*'
                     ]
                 }]
             },
@@ -102,8 +101,8 @@ module.exports = function (grunt) {
             },
             all: [
                 'Gruntfile.js',
-                '<%= yeoman.app %>/scripts/**/*.js',
-                '!<%= yeoman.app %>/scripts/vendor/*',
+                '<%= guzo.app %>/scripts/**/*.js',
+                '!<%= guzo.app %>/scripts/vendor/*',
                 'test/spec/{,*/}*.js'
             ]
         },
@@ -117,13 +116,13 @@ module.exports = function (grunt) {
         },
         compass: {
             options: {
-                sassDir: '<%= yeoman.app %>/styles',
+                sassDir: '<%= guzo.app %>/styles',
                 cssDir: '.tmp/styles',
                 generatedImagesDir: '.tmp/images/generated',
-                imagesDir: '<%= yeoman.app %>/images',
-                javascriptsDir: '<%= yeoman.app %>/scripts',
-                fontsDir: '<%= yeoman.app %>/styles/fonts',
-                importPath: '<%= yeoman.app %>/bower_components',
+                imagesDir: '<%= guzo.app %>/images',
+                javascriptsDir: '<%= guzo.app %>/scripts',
+                fontsDir: '<%= guzo.app %>/styles/fonts',
+                importPath: '<%= guzo.app %>/bower_components',
                 httpImagesPath: '/images',
                 httpGeneratedImagesPath: '/images/generated',
                 httpFontsPath: '/styles/fonts',
@@ -131,7 +130,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    generatedImagesDir: '<%= yeoman.dist %>/images/generated'
+                    generatedImagesDir: '<%= guzo.dist %>/images/generated'
                 }
             },
             server: {
@@ -163,10 +162,10 @@ module.exports = function (grunt) {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
                 options: {
                     // `name` and `out` is set by grunt-usemin
-                    baseUrl: yeomanConfig.app + '/scripts',
+                    baseUrl: guzoConfig.app + '/scripts',
                     optimize: 'none',
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
-                    // https://github.com/yeoman/grunt-usemin/issues/30
+                    // https://github.com/guzo/grunt-usemin/issues/30
                     //generateSourceMaps: true,
                     // required to support SourceMaps
                     // http://requirejs.org/docs/errors.html#sourcemapcomments
@@ -181,34 +180,34 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     src: [
-                        '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-                        '<%= yeoman.dist %>/styles/fonts/*'
+                        '<%= guzo.dist %>/scripts/{,*/}*.js',
+                        '<%= guzo.dist %>/styles/{,*/}*.css',
+                        '<%= guzo.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
+                        '<%= guzo.dist %>/styles/fonts/*'
                     ]
                 }
             }
         },
         useminPrepare: {
             options: {
-                dest: '<%= yeoman.dist %>'
+                dest: '<%= guzo.dist %>'
             },
-            html: '<%= yeoman.app %>/index.html'
+            html: '<%= guzo.app %>/index.html'
         },
         usemin: {
             options: {
-                dirs: ['<%= yeoman.dist %>']
+                dirs: ['<%= guzo.dist %>']
             },
-            html: ['<%= yeoman.dist %>/{,*/}*.html'],
-            css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
+            html: ['<%= guzo.dist %>/{,*/}*.html'],
+            css: ['<%= guzo.dist %>/styles/{,*/}*.css']
         },
         imagemin: {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%= yeoman.app %>/images',
+                    cwd: '<%= guzo.app %>/images',
                     src: '{,*/}*.{png,jpg,jpeg}',
-                    dest: '<%= yeoman.dist %>/images'
+                    dest: '<%= guzo.dist %>/images'
                 }]
             }
         },
@@ -216,9 +215,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd: '<%= yeoman.app %>/images',
+                    cwd: '<%= guzo.app %>/images',
                     src: '{,*/}*.svg',
-                    dest: '<%= yeoman.dist %>/images'
+                    dest: '<%= guzo.dist %>/images'
                 }]
             }
         },
@@ -253,9 +252,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= yeoman.app %>',
+                    cwd: '<%= guzo.app %>',
                     src: ['*.html', 'partials/*.html'],
-                    dest: '<%= yeoman.dist %>'
+                    dest: '<%= guzo.dist %>'
                 }]
             }
         },
@@ -265,8 +264,8 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: '<%= yeoman.app %>',
-                    dest: '<%= yeoman.dist %>',
+                    cwd: '<%= guzo.app %>',
+                    dest: '<%= guzo.dist %>',
                     src: [
                         '*.{ico,png,txt}',
                         '.htaccess',
@@ -278,7 +277,7 @@ module.exports = function (grunt) {
             styles: {
                 expand: true,
                 dot: true,
-                cwd: '<%= yeoman.app %>/styles',
+                cwd: '<%= guzo.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
             }
@@ -304,7 +303,7 @@ module.exports = function (grunt) {
                 exclude: ['modernizr']
             },
             all: {
-                rjsConfig: '<%= yeoman.app %>/scripts/main.js'
+                rjsConfig: '<%= guzo.app %>/scripts/main.js'
             }
         }
     });
